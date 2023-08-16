@@ -280,8 +280,6 @@ main {
 }
 .restaurant-title {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
   position: relative;
@@ -291,7 +289,6 @@ main {
 }
 .restaurant-title i {
   position: absolute;
-  bottom: 25px;
   right: 25px;
   border: none;
   background-color:transparent;
@@ -304,7 +301,7 @@ main {
   background-clip: text;
   -webkit-background-clip: text;
   opacity: 0;
-  transition: all 500ms ease-in-out;
+  transition: all 800ms ease-in-out;
   background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
 } 
 .restaurant-title:hover .fas {
@@ -334,7 +331,6 @@ main {
 }
 .dish-name {
   display: flex;
-  flex-direction: row;
   margin-top: 30px;
   background-color: white;
   border-radius: 15px;
@@ -353,45 +349,39 @@ main {
   }
 }
 .dish-box {
-  display:flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  width:100%;
+  overflow: hidden;
   margin: 10px 10px;
-  justify-content: space-between;
-  word-wrap: break-word;
 }
 .dish-box h4 {
-  margin: 3px;
-  font-size: 20px;
-  width: fit-content;
+  margin: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
-.dish-description {
-  display: flex;
-  justify-content: space-between;
-  width:100%;
-}
-.dish-description p {
-  margin: 3px;
+
+.dish-box p {
+  margin: 8px;
   font-weight: 200;
   width: 100%;
+  font-size: 14px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; 
 }
 .dish-price {
-  text-align: right;
-}
-
-.dish-name:hover .dish-price {
-  transform: translateX(0);
-}
-.dish-box .dish-price {
+  display: flex;
+  align-items: flex-end;
+  margin-left: auto;
+  font-weight: 900;
+  padding: 1rem;
   transform: translateX(50px);
-  align-self: flex-end;
   transition-property: transform;
   transition-duration: 1s;
 }
+.dish-name:hover .dish-price {
+  transform: translateX(0);
+}
+
 .dish-selection-btn {
   width: auto;
   background-color: #99e2d0;
